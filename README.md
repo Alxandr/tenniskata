@@ -15,7 +15,7 @@ You can assume, when player 1 scores, a method `wonPoint(“player1”)` is bein
 
 ## På norsk
 
-Tennis har et litt spesielt poengsystem, og for nykommere kan det til tider være vanskelig å følge. Jobben din er å skrive et som system som en resultattavle kan benytte for å vise frem nåværende stilling under tennis kamper.
+Tennis har et litt spesielt poengsystem, og for nykommere kan det til tider være vanskelig å følge. Jobben din er å skrive et system som en resultattavle kan benytte for å vise frem nåværende stilling under tennis kamper.
 
 Du kan anta at når player 1 scorer, vil en funksjon `wonPoint(“player1”)` bli kalt, og tilsvarende `wonPoint(“player2”)`. For å få den nåværende stillingen som en string vil `getScore()` funksjonen bli kalt.
 
