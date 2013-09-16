@@ -95,9 +95,7 @@ console.log(foo() + bar()); // foobar
 
 
 /***********
-* The prototype
-*
-* JavaScript does not feature a classical inheritance model; instead, it uses a prototypal one.
+* JavaScript constructors, prototypes, and the `new` keyword
 */
 
 function Foo() {
@@ -108,6 +106,22 @@ Foo.prototype.getValue = function (){
 	return this.value; //remember this keyword 
 };
 
-var test = new Foo();
-console.log(test.getValue()); // 42
+var fooInstance = new Foo();
+console.log(fooInstance.getValue()); // 42
+
+/**
+
+When new Foo() is called, JavaScript does four things:
+
+1. It creates a new object.
+2. It sets the constructor property of the object to Foo.
+3. It sets up the object to delegate to Foo.prototype.
+4. It calls Foo() in the context of the new object.
+
+Prototype:
+
+When an object is constructed, it inherits all of the properties of its constructor’s prototype. 
+So the Foo instance picked up the getValue function from Foo‘s prototype 
+
+*/
 
