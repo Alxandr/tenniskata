@@ -1,18 +1,5 @@
 # Kata: Tennis
 
-## In English
-
-Tennis has a rather quirky scoring system, and to newcomers it can be a little difficult to keep track of. Your task is to write a system which a scoreboard can use to display the current score during tennis matches.
-
-You can assume, when player 1 scores, a method `wonPoint(“player1”)` is being called, and similarly `wonPoint(“player2”)`. To get the current score as a string the `getScore()` function is called.
-
-1. A game is won by the first player to have won at least four points in total and at least two points more than the opponent. The score is then “Win for player1” or “Win for player2”.
-2. The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.
-3. If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.
-4. If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage player1” or “Advantage player2”.
-
- N.B! Sets and Matches are out of scope, so you only need to report the score for the current game.
-
 ## På norsk
 
 Tennis har et litt spesielt poengsystem, og for nykommere kan det til tider være vanskelig å følge. Jobben din er å skrive et system som en resultattavle kan benytte for å vise frem nåværende stilling under tennis kamper.
@@ -26,4 +13,15 @@ Du kan anta at når player 1 scorer, vil en funksjon `wonPoint(“player1”)` b
 
 N.B! Set og Match er utenfor scope, så du trenger kun å rapportere stillingen i det nåværende game'et. 
 
- 
+ ## In English
+
+Tennis has a rather quirky scoring system, and to newcomers it can be a little difficult to keep track of. Your task is to write a system which a scoreboard can use to display the current score during tennis matches.
+
+You can assume, when player 1 scores, a method `wonPoint(“player1”)` is being called, and similarly `wonPoint(“player2”)`. To get the current score as a string the `getScore()` function is called.
+
+1. A game is won by the first player to have won at least four points in total and at least two points more than the opponent. The score is then “Win for player1” or “Win for player2”.
+2. The running score of each game is described in a manner peculiar to tennis: scores from zero to three points are described as “Love”, “Fifteen”, “Thirty”, and “Forty” respectively.
+3. If at least three points have been scored by each player, and the scores are equal, the score is “Deuce”.
+4. If at least three points have been scored by each side and a player has one more point than his opponent, the score of the game is “Advantage player1” or “Advantage player2”.
+
+ N.B! Sets and Matches are out of scope, so you only need to report the score for the current game.
