@@ -11,7 +11,6 @@ describe('Tennis', function () {
 
 	it("first match", function () {
 		tennis.wonPoint("player1");
-
-		// expect(tennis.getScore()).toBe("");
+		expect(tennis.getScore()).toBe("...");
 	});
-})
+});

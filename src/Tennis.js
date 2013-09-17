@@ -6,5 +6,5 @@ Tennis.prototype.wonPoint = function(player) {
 };
 
 Tennis.prototype.getScore = function() {
-	return "Love - Love";
+	return "?";
 };
