@@ -16,6 +16,8 @@ Tennis.prototype.wonPoint = function(player) {
 
 };
 
+
+
 Tennis.prototype.getScore = function() {
 	if(this.player1Score === this.player2Score && this.player1Score >=3 && this.player2Score>=3){
 
@@ -28,6 +30,9 @@ Tennis.prototype.getScore = function() {
 
 	if(this.player1Score-this.player2Score>=2 &&this.player1Score>=4)
 		return this.score[7];
+
+	if(this.player2Score-this.player1Score>=2 &&this.player2Score>=4)
+		return this.score[8];
 
 	return this.score[this.player1Score] +" - "+this.score[this.player2Score];
 };
