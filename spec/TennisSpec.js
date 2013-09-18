@@ -71,5 +71,37 @@ describe('Tennis', function () {
 		tennis.wonPoint("player2");
 
 		expect(tennis.getScore()).toBe("Fifteen - Forty");
-	})
+	});
+
+	it('should return "Advantage player1" if both players have at least three points and the first player has 1 more point than the second', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		for(var i = 0; i < 100; i++) {
+			tennis.wonPoint("player1");
+			tennis.wonPoint("player2");
+			expect(tennis.getScore()).toBe("Advantage player1");
+		}
+	});
+
+	it('should return "Advantage player2" if both players have at least three points and the second player has 1 more point than the first', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		for(var i = 0; i < 100; i++) {
+			tennis.wonPoint("player1");
+			tennis.wonPoint("player2");
+			expect(tennis.getScore()).toBe("Advantage player2");
+		}
+	});
 });
