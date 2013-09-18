@@ -1,38 +1,40 @@
+(function(root) {
 
-function Tennis() {
-	this.score = ["Love","Fifteen","Thirty","Forty","Deuce","Advantage player1","Advantage player2","Win for player1","Win for player2"];
-	this.player1Score= 0;
-	this.player2Score= 0;
-}
+	var playerScoreNames = ["Love","Fifteen","Thirty","Forty"];
+	var specialScores = ["Deuce","Advantage player1","Advantage player2","Win for player1","Win for player2"];
 
+	var Tennis = root.Tennis = function() {
+		var scores = [0,0];
 
+		function wonPoint (player) {
+			switch(player) {
+				case 'player1': scores[0]++; break;
+				case 'player2': scores[1]++; break;
+			}
+		}
 
-Tennis.prototype.wonPoint = function(player) {
-	if(player==="player1"){
-		this.player1Score++;
-	}else{
-		this.player2Score++;
-	}
+		function getScore() {
+			if(scores[0] > 3 && scores[0] > scores[1] + 1)
+				return specialScores[3];
+			if(scores[1] > 3 && scores[1] > scores[0] + 1)
+				return specialScores[4];
 
-};
+			if(scores[0] > 2 && scores[1] > 2) {
+				if(scores[0] > scores[1])
+					return specialScores[1];
+				else if(scores[1] > scores[0])
+					return specialScores[2];
+				else
+					return specialScores[0];
+			}
 
+			return playerScoreNames[scores[0]] + ' - ' + playerScoreNames[scores[1]];
+		}
 
+		return {
+			wonPoint: wonPoint,
+			getScore: getScore
+		};
+	};
 
-Tennis.prototype.getScore = function() {
-	if(this.player1Score === this.player2Score && this.player1Score >=3 && this.player2Score>=3){
-
-		return this.score[4];
-	}
-	if(this.player1Score-this.player2Score===1 && this.player1Score>=4)
-		return this.score[5];
-	if(this.player2Score-this.player1Score===1 && this.player2Score>=4)
-		return this.score[6];
-
-	if(this.player1Score-this.player2Score>=2 &&this.player1Score>=4)
-		return this.score[7];
-
-	if(this.player2Score-this.player1Score>=2 &&this.player2Score>=4)
-		return this.score[8];
-
-	return this.score[this.player1Score] +" - "+this.score[this.player2Score];
-};
+})(this);
