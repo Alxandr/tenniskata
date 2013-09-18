@@ -104,4 +104,49 @@ describe('Tennis', function () {
 			expect(tennis.getScore()).toBe("Advantage player2");
 		}
 	});
+
+	it('should return "Win for player1" if player1 has at least 2 points more than player2 and player1 has at least 4 points', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+
+		expect(tennis.getScore()).toBe("Win for player1");
+	});
+
+	it('should return "Win for player1" if player1 has at least 2 points more than player2 and player1 has at least 4 points', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+
+		expect(tennis.getScore()).toBe("Win for player1");
+	});
+
+	it('should return "Win for player1" if player1 has at least 2 points more than player2 and player1 has at least 4 points', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		expect(tennis.getScore()).toBe("Win for player1");
+	});
+
+	it('should return "Win for player1" if player1 has at least 2 points more than player2 and player1 has at least 4 points', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		for(var i = 0; i < 100; i++) {
+			tennis.wonPoint("player1");
+			tennis.wonPoint("player2");
+			expect(tennis.getScore()).toBe("Win for player1");
+		}
+	});
 });
