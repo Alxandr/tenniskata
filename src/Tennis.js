@@ -1,6 +1,6 @@
 
 function Tennis() {
-	this.score=["Love","Fifteen"];
+	this.score=["Love","Fifteen","Thirty"];
 	this.player1Score= 0;
 	this.player2Score= 0;
 }
