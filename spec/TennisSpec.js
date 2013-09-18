@@ -40,4 +40,19 @@ describe('Tennis', function () {
 
 		expect(tennis.getScore()).toBe("Deuce");
 	});
+
+	it("should return \"Deuce\" if both players have more than 3 points, and the same number of points", function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		for(var i = 0; i < 100; i++) {
+			tennis.wonPoint("player1");
+			tennis.wonPoint("player2");
+			expect(tennis.getScore()).toBe("Deuce");
+		}
+	});
 });
