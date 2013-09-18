@@ -55,4 +55,21 @@ describe('Tennis', function () {
 			expect(tennis.getScore()).toBe("Deuce");
 		}
 	});
+
+	it('should return "Forty - Love" if the first player has won 3 points and the second player has wone none', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+
+		expect(tennis.getScore()).toBe("Forty - Love");
+	});
+
+	it('should return "Fifteen - Forty" if the second player has won 3 points and the first player has one 1', function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		expect(tennis.getScore()).toBe("Fifteen - Forty");
+	})
 });
