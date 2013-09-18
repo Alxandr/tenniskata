@@ -11,11 +11,13 @@ describe('Tennis', function () {
 
 	it("should return \"Fifteen - Love\" if first player takes first point", function () {
 		tennis.wonPoint("player1");
+
 		expect(tennis.getScore()).toBe("Fifteen - Love");
 	});
 
 	it("should return \"Love - Fifteen\" if second player takes first point", function() {
 		tennis.wonPoint("player2");
+
 		expect(tennis.getScore()).toBe("Love - Fifteen");
 	});
 
@@ -24,6 +26,18 @@ describe('Tennis', function () {
 		tennis.wonPoint("player1");
 		tennis.wonPoint("player2");
 		tennis.wonPoint("player2");
+
 		expect(tennis.getScore()).toBe("Thirty - Thirty");
+	});
+
+	it("should return \"Deuce\" if both players have 3 points", function() {
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player1");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+		tennis.wonPoint("player2");
+
+		expect(tennis.getScore()).toBe("Deuce");
 	});
 });
